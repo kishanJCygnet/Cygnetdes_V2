@@ -135,15 +135,7 @@
 			</div>
 		</div>
 	<?php endif;
-	/* End Top Tab Section block */	
-
-	/* Page Selection Section Start */
-	if (have_rows('page_selection')) :  ?>
-		<div class="pageselectioncls">
-			<?php echo do_shortcode('[pageselection]'); ?>
-		</div>
-	<?php endif;
-	/* Page Selection Section End */		
+	/* End Top Tab Section block */		
 
 	/* Manage content block */
 	if (have_rows('manage_content')) :

@@ -162,8 +162,10 @@
 			location = url + '/thank-you-for-your-interest';
 		} else if(e.detail.contactFormId == 172 || e.detail.contactFormId == 30976) {
 			location = url + '/thank-you-for-contacting-us';
-		} else if(e.detail.contactFormId == 35808) {
+		} else if(e.detail.contactFormId == 35808 || e.detail.contactFormId == 35871) {
 			location = url + '/thank-you-for-subscribing';
+		} else if(e.detail.contactFormId == 35841) {
+			location = url + '/thank-you-for-unsubscribing';
 		}
 	  }, false);
 	</script>

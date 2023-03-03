@@ -396,46 +396,6 @@ function insights_slider()
 }
 
 /**
- * Page selection Shortcode
- */
-add_shortcode('pageselection', 'pageselection_list');
-function pageselection_list()
-{
-    ob_start();
-    global $post;
-    $currPageId = $post->ID;
-    $insights = get_field('page_selection', $currPageId);
-	
-    if ($insights && count($insights) > 0) :?>
-        <section class="insights-section light-bg <?php echo the_field('insights_section_custom_class'); ?>">
-            <div class="container">
-                <div class="title-heading">
-                    <h2 class="wow fadeInUp" data-wow-offset="50">Page List <span class="heading-border"></span></h2>
-                </div>
-                <div class="insights-inner">
-                <?php foreach ($insights as $insights) :
-					   $img = wp_get_attachment_image_src( get_post_thumbnail_id($insights->ID), 'large');
-					   ?>
-                        <div class="insights-card card wow fadeInUp" data-wow-delay="<?php echo $s; ?>s" data-wow-offset="50">
-                            <div class="insights-content card-body">
-                                <div class="insight-in-content">
-                                    <h2 class="slider-title">
-										<a href="<?php echo esc_url( get_permalink($insights->ID) ); ?>"><?php echo $insights->post_title;?></a>
-									</h2>
-                                </div>
-                            </div>
-                        </div>
-                    <?php $s = $s + 0.2; endforeach;?>
-                </div>
-            </div>
-        </section>
-   <?php
-        $insightsVar = ob_get_clean();
-        return $insightsVar;
-    endif;
-}
-
-/**
  * Case Studies Shortcode
  */
 add_shortcode('case_studies', 'case_studies_slider');

@@ -61,7 +61,7 @@ function AddReadMore() {
   var readLessTxt = " Read Less";
   
   //Traverse all selectors with this class and manupulate HTML part to show Read More
-  jQuery(".icon-box .description:not(.no-readmore .icon-box .description):not(.automation-experience .icon-box .description):not(.benifits .icon-box .description):not(.desktop-commands .icon-box .description):not(.Integrations-section .icon-box .description):not(.capabilitie-section .icon-box .description)").each(function() {
+  jQuery(".icon-box .description:not(.automation-experience .icon-box .description):not(.benifits .icon-box .description):not(.desktop-commands .icon-box .description):not(.Integrations-section .icon-box .description):not(.capabilitie-section .icon-box .description)").each(function() {
     
     //alert(words.length);
       if (jQuery(this).find(".firstSec").length)
@@ -154,27 +154,14 @@ jQuery(document).ready(function(){
             jQuery('.search-icon .overlay').show();
           }
       });
-      // jQuery('.testimonials h2 a').attr("href","#");
-      // jQuery('.testimonials h2 a').attr("href","#");
+      jQuery('.testimonials h2 a').attr("href","#");
+      jQuery('.testimonials h2 a').attr("href","#");
 
-      jQuery('.banner-content.digital-transformation-banner .inner-text ul li:first-child').addClass('active animate__animated animate__fadeIn');
+       
   });
 // jQuery(window).on('resize', function(){
 //   solution();
 // });
-setInterval(function()
-{
-    // Remove .active class from the active li, select next li sibling.
-    var next = jQuery('.banner-content.digital-transformation-banner .inner-text ul > li.active').removeClass('active animate__animated animate__fadeIn').next('li');
-
-    // Did we reach the last element? Of so: select first sibling
-    if (!next.length) next = next.prevObject.siblings('li:first-child');
-
-    // Add .active class to the li next in line.
-    next.addClass('active animate__animated animate__fadeIn');
-    
-}, 5000);
-
 
 jQuery(window).scroll(function() {    
   var scroll = jQuery(window).scrollTop();
@@ -203,33 +190,33 @@ else if(scroll >= 1200) {
   }, 10000);
 }
 });
-// jQuery('.testimonial-slider > li:first-child').addClass('active');
-// setInterval(function()
-// {
-//     // Remove .active class from the active li, select next li sibling.
-//     var next = jQuery('.testimonial-slider > li.active').removeClass('active').next('li');
-//     // Did we reach the last element? Of so: select first sibling
-//     if (!next.length) next = next.prevObject.siblings('li:first-child');
-//     // Add .active class to the li next in line.
-//     next.addClass('active');    
-// }, 40000);
+jQuery('.testimonial-slider > li:first-child').addClass('active');
+setInterval(function()
+{
+    // Remove .active class from the active li, select next li sibling.
+    var next = jQuery('.testimonial-slider > li.active').removeClass('active').next('li');
+    // Did we reach the last element? Of so: select first sibling
+    if (!next.length) next = next.prevObject.siblings('li:first-child');
+    // Add .active class to the li next in line.
+    next.addClass('active');    
+}, 40000);
 
-// jQuery('.testimonial .nav-arrow .arrow-prev').click(function(){
-//   // Remove .active class from the active li, select next li sibling.
-//   var prev = jQuery('.testimonial-slider > li.active').removeClass('active').prev('li');
-//   // Did we reach the last element? Of so: select first sibling
-//   if (!prev.length) prev = prev.prevObject.siblings('li:last-child');
-//   // Add .active class to the li next in line.
-//   prev.addClass('active');  
-// });
-// jQuery('.testimonial .nav-arrow .arrow-next').click(function(){
-//     // Remove .active class from the active li, select next li sibling.
-//     var next = jQuery('.testimonial-slider > li.active').removeClass('active').next('li');
-//     // Did we reach the last element? Of so: select first sibling
-//     if (!next.length) next = next.prevObject.siblings('li:first-child');
-//     // Add .active class to the li next in line.
-//     next.addClass('active');  
-// });
+jQuery('.testimonial .nav-arrow .arrow-prev').click(function(){
+  // Remove .active class from the active li, select next li sibling.
+  var prev = jQuery('.testimonial-slider > li.active').removeClass('active').prev('li');
+  // Did we reach the last element? Of so: select first sibling
+  if (!prev.length) prev = prev.prevObject.siblings('li:last-child');
+  // Add .active class to the li next in line.
+  prev.addClass('active');  
+});
+jQuery('.testimonial .nav-arrow .arrow-next').click(function(){
+    // Remove .active class from the active li, select next li sibling.
+    var next = jQuery('.testimonial-slider > li.active').removeClass('active').next('li');
+    // Did we reach the last element? Of so: select first sibling
+    if (!next.length) next = next.prevObject.siblings('li:first-child');
+    // Add .active class to the li next in line.
+    next.addClass('active');  
+});
 
     jQuery('.ac-back').click(function(e) {
           e.preventDefault();
@@ -260,6 +247,31 @@ else if(scroll >= 1200) {
    jQuery('.circle-anim1').append('<span class="circle-animation"><span class="span1"></span><span class="span2"></span><span class="span3"></span><span class="span4"></span></span>');
    jQuery('.circle-anim2').append('<span class="circle-animation canim-2"><span class="span1"></span><span class="span2"></span><span class="span3"></span><span class="span4"></span></span>');
 
+   var videos = document.getElementsByTagName("video");
+
+function checkScroll() {
+    var fraction = 0.8; // Play when 80% of the player is visible.
+    for(var i = 0; i < videos.length; i++) {
+        var video = videos[i];
+        var x = video.offsetLeft, y = video.offsetTop, w = video.offsetWidth, h = video.offsetHeight, r = x + w, //right
+            b = y + h, //bottom
+            visibleX, visibleY, visible;
+            visibleX = Math.max(0, Math.min(w, window.pageXOffset + window.innerWidth - x, r - window.pageXOffset));
+            visibleY = Math.max(0, Math.min(h, window.pageYOffset + window.innerHeight - y, b - window.pageYOffset));
+            visible = visibleX * visibleY / (w * h);
+            if (visible > fraction) {
+           
+              video.play();
+
+            } else {
+                video.pause();
+            }
+    }
+}
+
+window.addEventListener('scroll', checkScroll, false);
+window.addEventListener('resize', checkScroll, false);
+
 // if (typeof videos.loop == 'boolean') { // loop supported
 //   videos.loop = true;
 // } else { // loop property not supported
@@ -270,49 +282,4 @@ else if(scroll >= 1200) {
 // }
 // //...
 // videos.play();
-
-jQuery('.counter').each(function() {
-  var $this = jQuery(this),
-      countTo = $this.attr('data-count');
-  
-      jQuery({ countNum: $this.text()}).animate({
-    countNum: countTo
-  },  
-  {  
-    duration: 4000,
-    easing:'linear',
-    step: function() {
-      $this.text(Math.floor(this.countNum));
-    },
-    complete: function() {
-      $this.text(this.countNum);
-      //alert('finished');
-    }
-  });  
-});
- 
-jQuery(document).ready(function(){
-
-  // Select and loop the container element of the elements you want to equalise
-  jQuery('.case-studies-slider').each(function(){  
-    
-    // Cache the highest
-    var highestBox = 0;
-    
-    // Select and loop the elements you want to equalise
-    jQuery('.insights-card', this).each(function(){
-      
-      // If this box is higher than the cached highest then store it
-      if(jQuery(this).height() > highestBox) {
-        highestBox = jQuery(this).height(); 
-      }
-    
-    });  
-          
-    // Set the height of all those children to whichever was highest 
-    jQuery('.insights-card',this).height(highestBox);
-                  
-  }); 
-
-});
 
