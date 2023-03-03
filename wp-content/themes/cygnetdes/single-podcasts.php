@@ -20,6 +20,10 @@ if (have_posts()) :
 					</div>
 				</div>    
 			</section>
+			<section class="banner-content half-banner d-none">
+				<div class="banner-inner-content w-100" <?php if (get_field('banner_mobile_image')) : ?> style="background-image: url('<?php echo the_field('banner_mobile_image'); ?>')" <?php endif; ?>>
+				</div>
+			</section>
 			<!-- Banner Slider end -->
 			<div>
 				<section class="bg-white no-min-height">               
@@ -35,16 +39,16 @@ if (have_posts()) :
 							<div class="container section-container-padding pt-0 pb-0">
 								<div class="single-container">                                
 									<div class="container-with-sidebar">
-										<article class="blog-contents pe-md-3 pe-xl-4 pe-xxl-5">
-											<h2 class="section-title mb-3">Summary</h2>
-											<!--<div class="blog-share-social d-xl-none mb-5">
+										<article class="blog-contents">
+											<!--<h2 class="section-title mb-3">Summary</h2>-->
+											<div class="blog-share-social mb-5">
 												<div class="sidebar-social">
 													<div class="share-social-box">
 														<a href="javascript:void(0)" title="Share" class="share-btn"><i class="bi bi-share" aria-hidden="true"></i></a>
 														<?php echo sharethis_inline_buttons(); ?>
 													</div>
 												</div>
-											</div>-->
+											</div>
 											<?php the_content(); ?>
 										</article>
 									</div>

@@ -10,9 +10,6 @@
     border-bottom-right-radius: 30px;
     box-shadow: 0 14px 28px rgb(0 0 0 / 16%), 0 10px 10px rgb(0 0 0 / 16%);
 }
-.blog-container > div.row{
-    justify-content: center;
-}
 .blog-container .row > div{
     margin-bottom: 50px !important;
 }
@@ -21,7 +18,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     transition: .3s all linear;
-    background-position: center center;
 }
 .blog-container .card:hover .card-image{
     background-color: #0C3761;
@@ -38,7 +34,7 @@
     line-height: 1.5;
 }
 .blog-container .card:hover .card-title a{
-    color:#3cb4e7;
+    color: #969;
 }
 
 .blog-container .card-title {
@@ -76,13 +72,13 @@
     }
 }
 
-// .single-post{
-//     padding-top: 115px;
-// }
+.single-post{
+    padding-top: 115px;
+}
 .single-post header,
 .page-id-22561 header,
 .single-webinars header  {
-    background-color: #ffffff;
+    background-color: #0c3761;
 }
 .single-webinars div > section:last-child{
     padding-bottom: 250px;
@@ -96,7 +92,7 @@
     font-weight: 500;
     line-height: 40px;
     color: #0D3862;
-    font-family: $roboto;
+    font-family: 'Roboto';
     margin-bottom: 15px;
     @include bp(md-max){
         text-align: center;
@@ -153,12 +149,7 @@
     margin-bottom: 15px;
 }
 .blog-contents ul li{
-    line-height: 1.8;
-    margin-bottom: 8px;
-    font-family: $roboto;
-    @include bp(sm-max){ 
-        font-size: 14px;
-    }
+    line-height: 2.3;
 }
 .blog-contents{
     font-size: 18px;
@@ -182,9 +173,6 @@
 }
 p{
     margin-bottom: 15px;
-}
-.blog-contents h3{
-
 }
 .blog-contents br,
 .newsletter br{
@@ -307,13 +295,13 @@ p{
     font-weight: normal;
     white-space: nowrap;
     color: #fff !important;
-    background-color: #3cb4e7 !important;
+    background-color: #969 !important;
     line-height: 28px;
     border-radius: 30px;
     padding: 10px 30px;
     margin-top: 50px;
     &:hover{
-        color: #3cb4e7 !important;
+        color: #969 !important;
     }
 }
 .newsletter label {
@@ -516,7 +504,7 @@ p{
     left: 0;
 }
 .case-study .sidebar .check-custom-box a {
-    color: #3cb4e7;
+    color: #969;
 }
 .case-study .sidebar br{
     display: none;
@@ -528,7 +516,7 @@ p{
     margin: 0;
 }
 .case-study .sidebar input[type=submit]{
-    background-color: #3cb4e7 !important;
+    background-color: #969 !important;
     color: #fff !important;
     border-radius: 5px;
 }
@@ -538,11 +526,6 @@ p{
 }
 .case-study.blog-single-page + .contact-form-content {
     display: none;
-}
-.case-study .sidebar .wpcf7-spinner{
-    position: absolute;
-    right: 0;
-    margin-top: 10px;
 }
 .release-note-content h3{
     margin-bottom: 10px;
@@ -563,241 +546,4 @@ p{
 }
 .release-note-content ul li strong{
     font-weight: 500;
-}
-.blog-single-page{
-    .container-with-sidebar{
-        .sidebar{
-            position: static;
-            background-color: transparent;
-            padding: 0px;
-            border-radius: 10px;            
-            padding: 20px;
-            background-color: #0d38620f;
-            border-radius: 10px;
-            box-shadow: 0px 0px 4px 1px #cfcece;
-            .sidebar-content{               
-                margin-bottom: 20px;
-                h3{
-                    margin-bottom: 10px;
-                }
-                img{
-                    border-radius: 10px;
-                    margin-bottom: 10px;
-                }
-                .btn{
-                    width: 100%;
-                }
-            }
-            .latest-blog-post{
-                h3{
-                    margin-bottom: 20px;
-                    margin-top: 30px;
-                }
-                a{
-                    display: inline-block;
-                    width: 100%;
-                    padding: 8px 0;
-                    font-size: 14px;
-                    border-top: 1px solid #bdbdbd;
-                    line-height: 1.5;
-                    &:hover{
-                        color: #3cb4e7;
-                    }
-                }
-            }
-            .subscribe-blog-form{
-                h3{
-                    margin-top: 20px;
-                }
-            }
-            .subscribers-form{
-                 /* border: 1px solid #d8d8d8; */
-                padding: 20px 10px;
-                border-radius: 3px;
-                margin: 14px 0 20px;
-                background-color: #fff;
-                form{
-                    .col-md-6{
-                        width: 100%;
-                        input{
-                            margin: 0;
-                            margin-bottom: 30px;
-                        }
-                        .subscribe-email{
-                            input{
-                                margin-bottom: 10px !important;
-                            }
-                        }
-                    }
-                    .custom-cf7-spinner{
-                        width: 100%;
-                        input{
-                            width: 100%;
-                        }
-                    }
-                    .wpcf7-spinner{
-                        margin-top: 0;
-                        &::before{
-                            left: calc(50% - 2px);
-                            top: calc(50% - 2px);
-                        }
-                    }
-                }
-            }
-            .related-blog-post{
-                h3{
-                    margin-bottom: 20px;
-                }
-                a{
-                    display: inline-block;
-                    /* width: 100%; */
-                    /* text-align: center; */
-                    font-size: 14px;
-                    border-top: 1px solid #bdbdbd;
-                    /* margin-bottom: 10px; */
-                    padding: 10px 0;
-                    /* border-radius: 10px; */
-                    line-height: 1.5;
-                }
-            }
-
-        }
-    }
-}
-.blog-contents h3{
-    color: #3cb4e7;
-    margin-bottom: 10px;
-}
-.single-podcasts{
-    .blog-contents{
-        .sharethis-inline-share-buttons{
-            display: block !important;
-            .st-btn{
-                width: 100%;
-                margin: 0;
-                display: inline-block !important;
-                margin-bottom: 10px;
-            }
-        }
-        .blog-share-social {
-            position: fixed;
-            top: 160px;
-            display: inline-block;
-            right: 0;
-            width: 51px;
-            background-color: #fff;
-            padding: 10px 10px 0;
-            z-index: 1;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-            box-shadow: 0px 0px 5px 0px #d8d8d8;
-        }
-    } 
-    .half-banner{
-    z-index: 2;
-        .banner-inner-content{
-            // background-image: url('https://www.cygnetdes.com/wp-content/uploads/2023/02/prodcast-banner-jpg.webp') !important;    
-            background-color: transparent !important;
-            background-size: cover;
-            height: 60vh;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            @include bp(xl-max){
-                
-                height: 54vh;
-            }
-            @include bp(lg-max){
-                
-                height: 40vh;
-            }
-            @include bp(md-max){
-                background-size: contain;
-                height: auto;
-            }
-    }
-    }
-    .banner-title{
-        display: none;
-    }
-    .listen-prodcast{
-        background-color: #ebebeb4f;
-        padding: 20px;
-        border-radius: 20px;
-        margin-bottom: 20px;
-        text-align: center;
-        box-shadow: 0px 0px 7px 0px #0003;
-        h2{
-            font-size: 28px;
-        }
-     
-        audio {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-          }
-          audio {            
-            width: 608px;
-            max-width: 100%;
-          }
-        //   audio::-webkit-media-controls-enclosure {
-        //     // max-width: none
-        //     color: #ffffff;
-        //   }
-          audio::-webkit-media-controls-panel {
-            background-color: #0c36612d;
-          }
-        //   audio::-webkit-media-controls-play-button {
-    
-        //     background: url('https://www.cygnetdes.com/wp-content/uploads/2023/02/play-button-arrowhead.png');
-        //     background-size: contain;
-        //     background-repeat: no-repeat;
-        //     height: 15px;
-        //     width: 15px;
-        //     background-position: center center;
-    
-        //   }
-        //   audio::-webkit-media-controls-mute-button {
-          
-        //     background: url('https://www.cygnetdes.com/wp-content/uploads/2023/02/mute.png');
-        //     background-size: contain;
-        //     background-repeat: no-repeat;
-        //     height: 15px;
-        //     width: 15px;
-        //     background-position: center center;
-        //   }
-        //   audio::-webkit-media-controls-current-time-display,
-        //   audio::-webkit-media-controls-time-remaining-display {
-        //     color: #ffffff;
-        //   }
-    }
-    .sub-content{
-        margin-top: 25px;
-        a{
-            color: #3cb4e7;
-            font-weight: 500;
-            text-decoration: underline;
-            margin-right: 4px;
-            
-        }
-    }
-    .overlay-bg{
-        @include bp(sm-max){
-                display: none !important;
-        }
-    }
-    .banner-content.half-banner.d-none{
-        @include bp(sm-max){
-            display: block !important;
-            .banner-inner-content{
-                height: 750px !important;
-            }
-     }
-     @include bp(xs-max){
-        .banner-inner-content{
-                height: 500px !important;
-            }
-        }
-    }
 }
